@@ -7,10 +7,16 @@ def parallel_processing(n, m, data):
     heapq.heapify(threads)
     return output
 
-    for i, j in enamurate(data):
-        time, job = heapq.heappop(threads)
-        output.append((job, time))
-        heapq.heappush(threads, (time + j, job))
+    for i in range(m):
+          job_time = times[i]
+
+    start_time, thread_id = heapq.heappop(threads)
+
+    print(thread_id, start_time)
+
+    start_time += job_time
+
+    heapq.heappush(threads, (start_time, thread_id))
 
     return output
 
@@ -24,8 +30,7 @@ def main():
     data = list(map(int, input().split()))
     result = parallel_processing(n,m,data)
 
-    for i in range(m):
-        print(result[i][0],result[i][1])
+    
 
 
 if __name__ == "__main__":
