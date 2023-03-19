@@ -1,7 +1,6 @@
 # python3
 import heapq
 
-import heapq
 
 n, m = map(int, input().split())
 times = list(map(int, input().split()))
@@ -22,5 +21,3 @@ for i in range(m):
     heapq.heappush(threads, (start_time, thread_id))
 
 
-if __name__ == "__main__":
-    main()
