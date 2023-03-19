@@ -20,4 +20,4 @@ for i in range(m):
 
     start_time += job
 
-    heapq.output(threads, (start_time, thread_index))
+    heapq.heappush(threads, (start_time, thread_index))
